@@ -69,41 +69,7 @@ implementation
             return msg;
             }
 		}
-		else
-			{
-				if(contents->dest == TOS_NODE_ID){
-					dbg(FLOODING_CHANNEL, "Ping Received. SRC: %d\n", contents->src);
-				}
-				//resend with TTL-1
-				else
-				{
-					contents->TTL = contents->TTL - 1;
-					dbg(FLOODING_CHANNEL, "Relaying packet. TTL: %d\n", contents->TTL);
-					call Sender.send(*contents, 3);
-					return msg;
-				}
-			}
-		}
-	}
-	
-	event void AMSend.sendDone(message_t* msg, error_t error){
-      //Clear Flag, we can send agai
-   	}
-
-   	bool isInList(pack packet)
-	{
-		// int i, size;
-		// pack toComp;
-		// size = call KnownPacketsList.size();
-		// for(i = 0; i < size; i++){
-		// 	toComp = call KnownPacketsList.get(i);
-		// 	if(toComp.dest == packet.dest && toComp.src == packet.src && toComp.seq == packet.seq)
-		// 	{
-		// 		return TRUE;
-		// 	}
-		// }
-		return FALSE;
-	}
+		
             .
             .
             . 
