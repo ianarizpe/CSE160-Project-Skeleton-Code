@@ -16,6 +16,7 @@ module FloodingP
 
 	uses interface Packet;
     uses interface AMPacket;
+	uses interface AMSend;
 	//Uses the Queue interface to determine if packet recieved has been seen before
 	uses interface List<pack> as KnownPacketsList;
 
