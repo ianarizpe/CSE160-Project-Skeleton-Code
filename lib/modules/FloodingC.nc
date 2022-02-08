@@ -1,11 +1,14 @@
-configuration FloodingC{
-    provides interface Flooding;
+#include "../../includes/am_types.h"
+
+generic configuration FloodingC(int channel){
+   provides interface Flooding;
 }
 
-implementation {
-    components Flooding;
-    Flooding = FloodingP;
-    FloodingP.Sender -> SimpleSendC;
+implementation{
+   components new FloodingP();
+   Flooding = FloodingP.Flooding;
+   components new SimpleSendC(channel);
+   FloodingP.Sender -> SimpleSendC;
 
 
    components new AMSenderC(channel);
