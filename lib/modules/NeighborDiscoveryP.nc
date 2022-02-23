@@ -5,7 +5,7 @@
 #include "../../includes/sendInfo.h"
 #include "../../includes/channels.h"
 
-module NeighborDiscoveryP
+generic module NeighborDiscoveryP
 {
 
     //Provides the SimpleSend interface in order to neighbor discover packets

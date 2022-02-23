@@ -5,7 +5,7 @@
 #include "../../includes/sendInfo.h"
 #include "../../includes/channels.h"
 
-module FloodingP
+generic module FloodingP
 {
 	//Provides the SimpleSend interface in order to flood packets
 	provides interface Flooding;
@@ -70,6 +70,11 @@ implementation
             }
 		}
 	}
+
+	 event void AMSend.sendDone(message_t* msg, error_t error){
+      //Copied format from simplesendp.nc
+      
+   }
 }
 		
             .
