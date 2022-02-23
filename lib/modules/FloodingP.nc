@@ -5,7 +5,7 @@
 #include "../../includes/sendInfo.h"
 #include "../../includes/channels.h"
 
-generic module FloodingP
+generic module FloodingP()
 {
 	//Provides the SimpleSend interface in order to flood packets
 	provides interface Flooding;
