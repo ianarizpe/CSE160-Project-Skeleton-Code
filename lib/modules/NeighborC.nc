@@ -1,9 +1,9 @@
-generic configuration NeighborDiscoveryC{
-    provides interface NeighborDiscovery;
+generic configuration NeighborC{
+    provides interface Neighbor;
 }
 
 implementation {
     components new NeighborDiscoveryP();
-    NeighborDiscovery = NeighborDiscoveryP.NeighborDiscovery;
+    Neighbor = NeighborDiscoveryP.Neighbor;
     
 }
