@@ -28,7 +28,8 @@ implementation
 {
     
     pack sendPackage; 
-    neighbor neighborHolder;
+    //neighbor neighborHolder;
+    uint16_t neighborHolder;
     uint16_t SEQ_NUM=200;
     uint8_t * temp = &SEQ_NUM; //header 
 

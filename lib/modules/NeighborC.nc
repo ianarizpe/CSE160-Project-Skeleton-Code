@@ -1,4 +1,4 @@
-generic configuration NeighborC{
+generic configuration NeighborC (){
     provides interface Neighbor;
 }
 
