@@ -78,6 +78,11 @@ implementation
             {
                 if (contents->TTL == 1)
                 {
+            } 
+            }
+        }
+    }
+}
                  .
                  .
                  .
