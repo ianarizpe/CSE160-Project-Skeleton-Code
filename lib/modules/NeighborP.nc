@@ -32,7 +32,7 @@ implementation
     uint16_t neighborHolder;
     uint16_t SEQ_NUM=200;
     //uint8_t * temp = &SEQ_NUM; //header 
-    uint16_t * temp = &SEQ_NUM; //header 
+    uint8_t * temp = &SEQ_NUM; //header 
 
     void makePack(pack * Package, uint16_t src, uint16_t dest, uint16_t TTL, uint16_t seq, uint16_t protocol, uint8_t * payload, uint8_t length);
 
@@ -85,8 +85,8 @@ implementation
         }
     }
 }
-                 .
-                 .
-                 .
+                 
+                
+                 
 
                  // to be continued by you ...
