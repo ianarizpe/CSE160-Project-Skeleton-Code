@@ -18,7 +18,7 @@ generic module NeighborP()
     uses interface Packet;
     uses interface AMPacket;
 	//Uses the Queue interface to determine if packet recieved has been seen before
-	uses interface List<neighbor> as Neighborhood;
+	uses interface List<uint16_t> as Neighborhood;
     uses interface Timer<TMilli> as periodicTimer;
    
 }
