@@ -3,7 +3,7 @@ generic configuration NeighborC{
 }
 
 implementation {
-    components new NeighborDiscoveryP();
-    Neighbor = NeighborDiscoveryP.Neighbor;
+    components new NeighborP();
+    Neighbor = NeighborP.Neighbor;
     
 }
