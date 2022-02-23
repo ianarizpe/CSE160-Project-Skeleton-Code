@@ -9,7 +9,7 @@ generic module NeighborP()
 {
 
     //Provides the SimpleSend interface in order to neighbor discover packets
-    provides interface NeighborDiscovery;
+    provides interface Neighbor;
     //Uses SimpleSend interface to forward recieved packet as broadcast
     uses interface SimpleSend as Sender;
     //Uses the Receive interface to determine if received packet is meant for me.
@@ -42,7 +42,7 @@ implementation
     uint8_t neighbors[19]; //Maximum of 20 neighbors?
 
     //running
-    command void NeighborDiscovery.run() 	{ 
+    command void Neighbor.run() 	{ 
         makePack(&sendPackage, TOS_NODE_ID, AM_BROADCAST_ADDR, 1, SEQ_NUM , PROTOCOL_PING, temp , PACKET_MAX_PAYLOAD_SIZE);
         SEQ_NUM++;
         call Sender.send(sendPackage, AM_BROADCAST_ADDR);
@@ -63,7 +63,7 @@ implementation
 		call Sender.send(sendPackage, AM_BROADCAST_ADDR);
     }
 
-	command void NeighborDiscovery.print() {
+	command void Neighbor.print() {
 		printNeighborhood();
 	}
 
