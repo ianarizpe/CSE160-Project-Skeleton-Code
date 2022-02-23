@@ -15,7 +15,7 @@ implementation{
    FloodingP.Packet -> AMSenderC;
    FloodingP.AMSend -> AMSenderC;
 
-   components new AMReceiverC(AM_SEND) as GeneralReceive;
+   components new AMReceiverC(channel) as GeneralReceive;
    FloodingP.Receiver -> GeneralReceive;
 
    components new ListC(pack, 20) as KnownPacketsList;
