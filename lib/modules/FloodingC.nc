@@ -1,6 +1,6 @@
 #include "../../includes/am_types.h"
 
-generic configuration FloodingC(channel){
+generic configuration FloodingC(int channel){
    provides interface Flooding;
 }
 
