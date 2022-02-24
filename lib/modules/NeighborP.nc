@@ -90,7 +90,7 @@ implementation
          call Queue.enqueue(input);
 
          // Start a send task which will be delayed.
-         postSendTask();
+         Neighbor.run();
 
          return SUCCESS;
       }
