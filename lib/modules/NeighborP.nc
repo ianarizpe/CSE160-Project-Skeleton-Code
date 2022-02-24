@@ -73,7 +73,7 @@ implementation
 	}
 
     command error_t Neighbor.send(pack msg, uint16_t dest) {
-      Sender.send(msg, dest);
+      call Sender.send(msg, dest);
    }
 
     event message_t *Receiver.receive(message_t * msg, void *payload, uint8_t len)
