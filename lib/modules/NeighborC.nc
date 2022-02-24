@@ -7,11 +7,11 @@ implementation {
     Neighbor = NeighborP.Neighbor;
 
    components new TimerMilliC() as periodicTimer;
-   components RandomC as Random;
+   //components RandomC as Random;
    //components new AMSenderC(channel);
 
    //Timers
-   NeighborP.periodicTimer -> periodicTimer;
+   //NeighborP.periodicTimer -> periodicTimer;
   
 
   
