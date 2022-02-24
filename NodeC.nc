@@ -34,6 +34,6 @@ implementation {
     components new FloodingC(AM_PACK);
     Node.Flooding -> Flooding;
 
-    components NeighborC();
+    components NeighborC(AM_PACK);
     Node.Neighbor -> Neighbor;
 }
