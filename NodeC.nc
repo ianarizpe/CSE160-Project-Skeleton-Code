@@ -35,5 +35,5 @@ implementation {
     Node.Sender -> FloodingC;
 
     components new NeighborC();
-    Node.Neighbor -> NeighborC;
+    Node.Neighborhood -> NeighborC;
 }

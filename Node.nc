@@ -23,6 +23,7 @@ module Node{
 
    uses interface CommandHandler;
    uses interface Flooding as Sender;
+   uses interface Neighbor as Neighborhood;
    // uses interface Neighbor
 }
 
