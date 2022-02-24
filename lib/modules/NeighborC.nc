@@ -5,7 +5,7 @@ generic configuration NeighborC (){
 implementation {
     components new NeighborP();
     Neighbor = NeighborP.Neighbor;
-
+    components new AMReceiverC(AM_PACK) as GeneralReceive;
    //components new TimerMilliC() as periodicTimer;
    //components RandomC as Random;
    //components new AMSenderC(channel);
