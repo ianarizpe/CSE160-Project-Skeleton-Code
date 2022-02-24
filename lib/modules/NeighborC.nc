@@ -14,9 +14,7 @@ implementation {
    NeighborP.periodicTimer -> periodicTimer;
    NeighborP.Random -> Random;
 
-   NeighborP.Packet -> AMSenderC;
-   NeighborP.AMPacket -> AMSenderC;
-   NeighborP.AMSend -> AMSenderC;
+  
 
     //Lists
    components new PoolC(sendInfo, 20);
