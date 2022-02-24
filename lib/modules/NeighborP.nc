@@ -69,6 +69,31 @@ implementation
 		printNeighborhood();
 	}
 
+    command error_t Neighbor.send(pack msg, uint16_t dest) {
+       // First we check to see if we have room in our queue. Since TinyOS is
+       // designed for embedded systems, there is no dynamic memory. This forces
+       // us to allocate space in a pool where pointers can be retrieved. See
+       // SimpleSendC to see where we allocate space. Be sure to put the values
+       // back into the queue once you are done.
+      if(!call Pool.empty()){
+         sendInfo *input;
+
+         input = call Pool.get();
+         input->packet = msg;
+         input->dest = dest;
+
+         // Now that we have a value from the pool we can put it into our queue.
+         // This is a FIFO queue.
+         call Queue.enqueue(input);
+
+         // Start a send task which will be delayed.
+         postSendTask();
+
+         return SUCCESS;
+      }
+      return FAIL;
+   }
+
     event message_t *Receiver.receive(message_t * msg, void *payload, uint8_t len)
     {
         if (len == sizeof(pack)) //check if there's an actual packet
