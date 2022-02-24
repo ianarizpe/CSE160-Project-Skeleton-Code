@@ -21,9 +21,7 @@ generic module NeighborP()
 	uses interface List<uint16_t> as Neighborhood;
     uses interface Timer<TMilli> as periodicTimer;
 
-    uses interface Queue<sendInfo*>;
-    uses interface Pool<sendInfo>;
-    uses interface Random;
+    
     //uses interface AMSend;
    
 }
@@ -75,23 +73,7 @@ implementation
 	}
 
     command error_t Neighbor.send(pack msg, uint16_t dest) {
-      if(!call Pool.empty()){
-         sendInfo *input;
-
-         input = call Pool.get();
-         input->packet = msg;
-         input->dest = dest;
-
-         // Now that we have a value from the pool we can put it into our queue.
-         // This is a FIFO queue.
-         call Queue.enqueue(input);
-
-         // Start a send task which will be delayed.
-         call Neighbor.run();
-
-         return SUCCESS;
-      }
-      return FAIL;
+      Sender.send(msg, dest);
    }
 
     event message_t *Receiver.receive(message_t * msg, void *payload, uint8_t len)
