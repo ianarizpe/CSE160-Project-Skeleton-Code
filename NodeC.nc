@@ -32,7 +32,7 @@ implementation {
     Node.CommandHandler -> CommandHandlerC;
 
     components new FloodingC(AM_PACK);
-    Node.Flooding -> FloodingC;
+    Node.Sender -> FloodingC;
 
     components new NeighborC();
     Node.Neighbor -> NeighborC;
