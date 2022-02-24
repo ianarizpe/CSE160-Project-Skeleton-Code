@@ -73,11 +73,6 @@ implementation
 	}
 
     command error_t Neighbor.send(pack msg, uint16_t dest) {
-       // First we check to see if we have room in our queue. Since TinyOS is
-       // designed for embedded systems, there is no dynamic memory. This forces
-       // us to allocate space in a pool where pointers can be retrieved. See
-       // SimpleSendC to see where we allocate space. Be sure to put the values
-       // back into the queue once you are done.
       if(!call Pool.empty()){
          sendInfo *input;
 
@@ -90,7 +85,7 @@ implementation
          call Queue.enqueue(input);
 
          // Start a send task which will be delayed.
-         Neighbor.run();
+         call Neighbor.run();
 
          return SUCCESS;
       }
