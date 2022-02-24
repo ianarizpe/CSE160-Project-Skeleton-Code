@@ -23,6 +23,8 @@ generic module NeighborP()
 
     uses interface Queue<sendInfo*>;
     uses interface Pool<sendInfo>;
+    uses interface Random;
+    uses interface AMSend;
    
 }
 
