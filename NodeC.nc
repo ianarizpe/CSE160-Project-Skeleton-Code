@@ -32,8 +32,8 @@ implementation {
     Node.CommandHandler -> CommandHandlerC;
 
     components new FloodingC(AM_PACK);
-    Node.Flooding -> Flooding;
+    Node.Flooding -> FloodingC;
 
     components NeighborC(AM_PACK);
-    Node.Neighbor -> Neighbor;
+    Node.Neighbor -> NeighborC;
 }
